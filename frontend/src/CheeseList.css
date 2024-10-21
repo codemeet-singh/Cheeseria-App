@@ -1,0 +1,51 @@
+.cheese-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #4a4a4a;
+}
+
+.cheese-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cheese-item {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 15px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.cheese-item:hover {
+  transform: scale(1.05);
+}
+
+.cheese-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.cheese-name {
+  font-size: 1.5em;
+  margin: 10px 0;
+  color: #333;
+}
+
+.cheese-price,
+.cheese-color {
+  font-size: 1em;
+  color: #666;
+}
