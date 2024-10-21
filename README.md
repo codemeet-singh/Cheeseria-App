@@ -1,8 +1,4 @@
-
-Memory updated
-Here's an updated README file that includes the delete cheese functionality and Docker instructions:
-
-Cheese Selection App
+Cheeseria App
 This is a simple cheese selection app that allows users to view, add, and delete different types of cheeses. The app consists of a front-end (React) and a back-end API for managing cheeses.
 
 Features
