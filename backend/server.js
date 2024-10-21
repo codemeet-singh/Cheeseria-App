@@ -58,35 +58,22 @@ app.get('/api/cheeses', (req, res) => {
   res.json(cheeses);
 });
 
+const getNextId = () => {
+  return cheeses.length > 0 ? Math.max(...cheeses.map(cheese => cheese.id)) + 1 : 1;
+};
+
 // Create a new cheese
 app.post('/api/cheeses', (req, res) => {
-  const newCheese = req.body
+  const { name, image, price_per_kilo, color } = req.body;
+  const newCheese = {
+    id: getNextId(),
+    name,
+    image,
+    price_per_kilo,
+    color,
+  };
   cheeses.push(newCheese); 
   res.status(201).json(newCheese);
-});
-
-// Update an existing cheese
-app.put('/api/cheeses/:id', (req, res) => {
-  const { id } = req.params;
-  const index = cheeses.findIndex(cheese => cheese.id === parseInt(id));
-  if (index !== -1) {
-    cheeses[index] = { ...cheeses[index], ...req.body };
-    res.json(cheeses[index]);
-  } else {
-    res.status(404).json({ message: 'Cheese not found' });
-  }
-});
-
-// Delete a cheese
-app.delete('/api/cheeses/:id', (req, res) => {
-  const { id } = req.params;
-  const index = cheeses.findIndex(cheese => cheese.id === parseInt(id));
-  if (index !== -1) {
-    cheeses.splice(index, 1);
-    res.status(204).send();
-  } else {
-    res.status(404).json({ message: 'Cheese not found' });
-  }
 });
 
 app.listen(PORT, () => {
