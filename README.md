@@ -7,7 +7,7 @@ Add new cheeses with a form.
 Delete cheeses from the list.
 Dockerized for easy setup and deployment.
 
-ech Stack
+Tech Stack
 Front-end: React
 Back-end: Node.js (Express) API
 Deployment: Docker
